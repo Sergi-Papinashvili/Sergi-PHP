@@ -1,21 +1,33 @@
 <?php
-if(isset($_GET["name"]) || isset($_GET["surname"]) || isset($_GET["salary"]) || isset($_GET["position"]))
-$name= "name";
-$surname= "surname";
-$salary= "salary";
-$position= "position";
-?>
-    
+	$name= "";
+	$surname= "";
+	$position= "";
+	$salary= "";
+	$income = "";
+	$finalSalary = "";
+	if (isset($_GET["ok"])){
+		$name = $_GET["name"];
+		$surname = $_GET["surname"];
+		$position = $_GET["position"];
+		$salary = $_GET["salary"];
+		$income = $_GET["income"];
+		$finalSalary = $_GET["finalSalary"];
+
+
+	}
+?>  
 <html>
 <body>
 <div class="form" style="width:500px;">
 <form action="<?php $PHP_SELF ?>" method ="GET">
-name:<br> <input type="text" name="name" style="width:200px;"/><br>
-lastname: <br> <input type="text" name="lastname" style="width:200px;"/><br>
-salary: <br><input type="text" name="salary"style="width:200px;" /><br>
-position: <br> <input type="text" name="position" style="width:200px;"/><br>
+Name:<br> <input type="text" name="name" style="width:200px;"/><br>
+Surname: <br> <input type="text" name="surname" style="width:200px;"/><br>
+Position: <br><input type="text" name="position"style="width:200px;" /><br>
+Salary: <br> <input type="text" name="salary" style="width:200px;"/><br>
+Income: <br> <input type="text" name="income" style="width:200px;"/><br>
+FinalSalary: <br> <input type="text" name="finalSalary" style="width:200px;"/><br>
 <form action="submit. <?php?>" method ="GET"><br>
-<input type="submit"/><br>
+<input type="submit" name="ok"/><br>
 </form>
 </form>
 </div>
@@ -23,22 +35,34 @@ position: <br> <input type="text" name="position" style="width:200px;"/><br>
 <table  border="1px">
 <tr >
 <td style="width:300px;"><?php echo  'name:';?> </td>
-<td style="width:300px;"><?php echo $_GET["name"]; ?><br /></td>
+<td style="width:300px;"><?php echo $name?><br /></td>
 </tr>
 
 <tr>
-<td><?php echo  'lastname:';?></td>
-<td><?php echo $_GET["lastname"]; ?><br /></td>
+<td><?php echo  'surname:';?></td>
+<td><?php echo $surname ?><br /></td>
 </tr>
+
+<tr>
+<td><?php echo  'position:';?></td>
+<td><?php echo $position?><br /></td>
+</tr>
+
+
 
 <tr>
 <td><?php echo  'salary:';?></td>
-<td><?php echo $_GET["salary"]; ?><br /></td>
+<td><?php echo $salary?><br /></td>
 </tr>
 
 <tr>
-<td><?php echo 'position:';?></td>
-<td><?php echo $_GET["position"]; ?><br /></td>
+<td><?php echo 'income:';?></td>
+<td><?php echo $income ?><br /></td>
+</tr>
+
+<tr>
+<td><?php echo 'finalSalary:';?></td>
+<td><?php echo $finalSalary ?><br /></td>
 </tr>
 
 </table>
